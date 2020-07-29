@@ -1,21 +1,48 @@
+
+//requ our servers 
 const express = require("express");
-const path = require("path");
-const PORT = process.env.PORT || 3001;
+// Helmet helps you secure your Express apps by setting various HTTP headers.
+const helmet = require("helmet");
+// Cross-origin resource sharing (CORS)
+const cors = require("cors");
+// database mongo db
+const morgan = require("morgan");
+const mongoose = require("mongoose");
+
+
+require("dotenv").config();
+const port = process.env.PORT || 3001;
+const mongoDB =
+  process.env.NODE_ENV !== "test"
+    ? process.env.MONGODB
+    : process.env.MONGODBTEST;
+
+
+require('dotenv').config();
+const routes = require('./client/src/users/routes');
+
 const app = express();
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(helmet());
+app.use(cors());
 
-
-// Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
+//  formating  if our enviroment is not production
+if (process.env.NODE_ENV !== "production") {
+  app.use(morgan("tiny"));
 }
 
-// Send every request to the React app
-// Define any API routes before this runs
-app.get("*", function(req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+// routes
+app.use('./client/src/users', routes);
+// our server listener
+mongoose.connect(mongoDB, { useNewUrlParser: true });
+mongoose.connection.on("error", err => {
+  console.error(err.message);
 });
 
-app.listen(PORT, function() {
-  console.log(`🌎 ==> API server now on port ${PORT}!`);
+const server = app.listen(port, () => {
+  console.log(`listening on port ${port}`);
 });
+
+module.exports = server;

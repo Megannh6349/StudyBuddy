@@ -1,7 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const controller = require('./controller');
-// const { catchErrors } = require("../utils/errorHandlers");
+
+const { catchErrors } = require("./errorHandeler");
 const { protect } = require('./middleware');
 
 

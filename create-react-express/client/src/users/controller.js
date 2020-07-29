@@ -13,7 +13,7 @@ const User = mongoose.model('User');
             return res.status(200).send(token);
         } catch (error) {
             if (error.code === 11000) {
-                return res.status(400).send({ email: "Address already in use!" });
+                return res.status(400).send({ email: "This address is used already!" });
             } else {
                 return res.status(500).end();
             }
@@ -28,12 +28,12 @@ const User = mongoose.model('User');
 
         const user = await User.findOne({ email: req.body.email });
         if (!user) {
-            return res.status(401).send({ email: "Email not found!" });
+            return res.status(401).send({ email: "Email was not found!" });
         }
 
         const match = await user.checkPassword(req.body.password);
         if (!match) {
-            return res.status(401).send({ password: "Password wrong!" });
+            return res.status(401).send({ password: "Incorrect password!" });
         }
 
         const token = user.newToken();

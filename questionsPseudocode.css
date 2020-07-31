@@ -1,0 +1,18 @@
+#questions {
+    margin: auto;
+    border: black 1px solid;
+    width: 80%;
+}
+
+h1 {
+    text-align: center;
+}
+
+h3 {
+    text-align: left;
+}
+
+.choices {
+    float: left;
+    border: black 1px solid;
+}

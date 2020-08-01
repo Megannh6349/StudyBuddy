@@ -16,22 +16,6 @@ const otherSpokenLang = ["English", "Spanish", "Mandarin Chinese", "Hindi", "Ben
 const otherRemotePref = ["In Person", "Remote", "Either"];
 const otherDistancePref = ["<15 miles", "15-25 miles", "25-40 miles", "40-60 miles", "60-100 miles", "100+ (doesn’t matter)"];
 
-// Preferred Age Slider logic
-var slider = document.getElementById('test-slider');
-// noUiSlider.create(slider, {
-//     start: [20, 80],
-//     connect: true,
-//     step: 1,
-//     orientation: 'horizontal', // 'horizontal' or 'vertical'
-//     range: {
-//         'min': 0,
-//         'max': 100
-//     },
-//     format: wNumb({
-//         decimals: 0
-//     })
-// });
-
 // Append User Years
 function showUserYearsExp() {
     $("#userYearsExperienceQuestion").empty();

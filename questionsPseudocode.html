@@ -21,13 +21,15 @@
 <body>
     <div class="container-fluid" id="questions">
         <h1>Tell us about you</h1>
-        <h3>What is your age?</h3>
-        <form action="#">
-            <p class="range-field">
-                <input type="range" id="test5" min="16" max="100" />
-            </p>
+        <h3>How old are you?</h3>
+        <form class="col s12">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input placeholder="42" id="age" type="number" min="18" max="99" class="validate">
+                    <label for="age">Age</label>
+                </div>
+            </div>
         </form>
-        <!-- Must link in nouislider.css and nouislider.js files located in the extras folder on Materialize -->
 
         <!-- User Years of Experience -->
         <h3>How many years of experience do you have?</h3>
@@ -64,8 +66,20 @@
         <!-- Looking for -->
         <h1>Now tell us what you're looking for</h1>
         <h3>How old would you like your partner to be?</h3>
-        <div id="test-slider"></div>
-        <!-- Must link in nouislider.css and nouislider.js files located in the extras folder on Materialize -->
+        <div class="row">
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input placeholder="18" id="min_age" type="number" min="18" max="99" class="validate">
+                        <label for="fmin_age">Minimum</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input placeholder="99" id="max_age" type="number" min="18" max="99" class="validate">
+                        <label for="min_age">Maximum</label>
+                    </div>
+                </div>
+            </form>
+        </div>
 
         <!-- Preferred Years of Experience -->
         <h3>How many years of experience would you like your partner to have?</h3>

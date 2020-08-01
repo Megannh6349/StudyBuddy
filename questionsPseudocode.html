@@ -7,6 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="Description" content="Enter your description here" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
@@ -16,750 +20,106 @@
 
 <body>
     <div class="container-fluid" id="questions">
-    <h1>Tell us about you</h1>
-    <h3>What is your age?</h3>
-    <form action="#">
-        <p class="range-field">
-            <input type="range" id="test5" min="16" max="100" />
-        </p>
-    </form>
-    <!-- Must link in nouislider.css and nouislider.js files located in the extras folder on Materialize -->
+        <h1>Tell us about you</h1>
+        <h3>How old are you?</h3>
+        <form class="col s12">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input placeholder="42" id="age" type="number" min="18" max="99" class="validate">
+                    <label for="age">Age</label>
+                </div>
+            </div>
+        </form>
 
-    <!-- User Years of Experience -->
-    <h3>How many years of experience do you have?</h3>
-    <div class="container-fluid choices">
-    <form action="#">
-        <p>
-            <label>
-                <input class="with-gap" name="group1" type="radio"  />
-                <span>${userYearsExperience[0]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input class="with-gap" name="group1" type="radio"  />
-                <span>${userYearsExperience[1]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input class="with-gap" name="group1" type="radio"  />
-                <span>${userYearsExperience[2]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input class="with-gap" name="group1" type="radio"  />
-                <span>${userYearsExperience[3]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input class="with-gap" name="group1" type="radio"  />
-                <span>${userYearsExperience[4]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input class="with-gap" name="group1" type="radio"  />
-                <span>${userYearsExperience[5]}</span>
-            </label>
-        </p>
-    </form>
-</div>
+        <!-- User Years of Experience -->
+        <h3>How many years of experience do you have?</h3>
+        <div class="container-fluid choices">
+            <form id="userYearsExperienceQuestion" action="#">
+            </form>
+        </div>
 
-    <!-- User Proficiency -->
-    <h3>Which languages and skills are you proficient in?</h3>
-    <form action="#">
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${userCodingAbilities[0]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${userCodingAbilities[1]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${userCodingAbilities[2]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${userCodingAbilities[3]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${userCodingAbilities[4]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${userCodingAbilities[5]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${userCodingAbilities[6]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${userCodingAbilities[7]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${userCodingAbilities[8]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${userCodingAbilities[9]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${userCodingAbilities[10]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${userCodingAbilities[11]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${userCodingAbilities[12]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${userCodingAbilities[13]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${userCodingAbilities[14]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${userCodingAbilities[15]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${userCodingAbilities[16]}</span>
-            </label>
-        </p>
-    </form>
+        <!-- User Proficiency -->
+        <h3>Which languages and skills are you proficient in?</h3>
+        <form id="userCodingAbilitiesQuestion" action="#">
+        </form>
 
-    <!-- User Stack -->
-    <h3>What would you consider your strong suit?</h3>
-    <form action="#">
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${userStack[0]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${userStack[1]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${userStack[2]}</span>
-            </label>
-        </p>
-    </form>
+        <!-- User Stack -->
+        <h3>What would you consider your strong suit?</h3>
+        <form id="userStackQuestion" action="#">
+        </form>
 
-    <!-- User Spoken Language -->
-    <h3>What language(s) do you speak?</h3>
-    <form action="#">
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${userSpokenLang[0]</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${userSpokenLang[1]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${userSpokenLang[2]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${userSpokenLang[3]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${userSpokenLang[4]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${userSpokenLang[5]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${userSpokenLang[6]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${userSpokenLang[7]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${userSpokenLang[8]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${userSpokenLang[9]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${userSpokenLang[10]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${userSpokenLang[11]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${userSpokenLang[12]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${userSpokenLang[13]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${userSpokenLang[14]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${userSpokenLang[15]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${userSpokenLang[16]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${userSpokenLang[17]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${userSpokenLang[18]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${userSpokenLang[19]}</span>
-            </label>
-        </p>
-    </form>
+        <!-- User Spoken Language -->
+        <h3>What language(s) do you speak?</h3>
+        <form id="userSpokenLangQuestion" action="#">
+        </form>
 
-    <!-- User Remote Preference -->
-    <h3>Would you prefer to work in person or remote?</h3>
-    <form action="#">
-        <p>
-            <label>
-                <input class="with-gap" name="group1" type="radio"  />
-                <span>${userRemotePref[0]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input class="with-gap" name="group1" type="radio"  />
-                <span>${userRemotePref[1]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input class="with-gap" name="group1" type="radio"  />
-                <span>${userRemotePref[2]}</span>
-            </label>
-        </p>
-    </form>
+        <!-- User Remote Preference -->
+        <h3>Would you prefer to work in person or remote?</h3>
+        <form id="userRemotePrefQuestion" action="#">
+        </form>
 
-    <!-- User Distance Preference -->
-    <h3>What's the furthest you'd like your partner to be from you?</h3>
-    <form action="#">
-        <p>
-            <label>
-                <input class="with-gap" name="group1" type="radio"  />
-                <span>${userDistancePref[0]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input class="with-gap" name="group1" type="radio"  />
-                <span>${userDistancePref[1]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input class="with-gap" name="group1" type="radio"  />
-                <span>${userDistancePref[2]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input class="with-gap" name="group1" type="radio"  />
-                <span>${userDistancePref[3]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input class="with-gap" name="group1" type="radio"  />
-                <span>${userDistancePref[4]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input class="with-gap" name="group1" type="radio"  />
-                <span>${userDistancePref[5]}</span>
-            </label>
-        </p>
-    </form>
+        <!-- User Distance Preference -->
+        <h3>What's the furthest you'd like your partner to be from you?</h3>
+        <form id="userDistancePrefQuestion" action="#">
+        </form>
 
-    <!-- Looking for -->
-    <h1>Now tell us what you're looking for</h1>
-    <h3>How old would you like your partner to be?</h3>
-    <div id="test-slider"></div>
-    <!-- Must link in nouislider.css and nouislider.js files located in the extras folder on Materialize -->
+        <!-- Looking for -->
+        <h1>Now tell us what you're looking for</h1>
+        <h3>How old would you like your partner to be?</h3>
+        <div class="row">
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input placeholder="18" id="min_age" type="number" min="18" max="99" class="validate">
+                        <label for="fmin_age">Minimum</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input placeholder="99" id="max_age" type="number" min="18" max="99" class="validate">
+                        <label for="min_age">Maximum</label>
+                    </div>
+                </div>
+            </form>
+        </div>
 
-    <!-- Preferred Years of Experience -->
-    <h3>How many years of experience would you like your partner to have?</h3>
-    <form action="#">
-        <p>
-            <label>
-                <input class="with-gap" name="group1" type="radio"  />
-                <span>${preferredYearsExperience[0]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input class="with-gap" name="group1" type="radio"  />
-                <span>${preferredYearsExperience[1]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input class="with-gap" name="group1" type="radio"  />
-                <span>${preferredYearsExperience[2]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input class="with-gap" name="group1" type="radio"  />
-                <span>${preferredYearsExperience[3]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input class="with-gap" name="group1" type="radio"  />
-                <span>${preferredYearsExperience[4]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input class="with-gap" name="group1" type="radio"  />
-                <span>${preferredYearsExperience[5]}</span>
-            </label>
-        </p>
-    </form>
+        <!-- Preferred Years of Experience -->
+        <h3>How many years of experience would you like your partner to have?</h3>
+        <form id="otherYearsExperienceQuestion" action="#">
+        </form>
 
-    <!-- Preferred Proficiency -->
-    <h3>Which languages and skills would you like your partner to be proficient in?</h3>
-    <form action="#">
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${preferredCodingAbilities[0]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${preferredCodingAbilities[1]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${preferredCodingAbilities[2]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${preferredCodingAbilities[3]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${preferredCodingAbilities[4]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${preferredCodingAbilities[5]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${preferredCodingAbilities[6]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${preferredCodingAbilities[7]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${preferredCodingAbilities[8]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${preferredCodingAbilities[9]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${preferredCodingAbilities[10]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${preferredCodingAbilities[11]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${preferredCodingAbilities[12]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${preferredCodingAbilities[13]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${preferredCodingAbilities[14]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${preferredCodingAbilities[15]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${preferredCodingAbilities[16]}</span>
-            </label>
-        </p>
-    </form>
+        <!-- Preferred Proficiency -->
+        <h3>Which languages and skills would you like your partner to be proficient in?</h3>
+        <form id="otherCodingAbilitiesQuestion" action="#">
+        </form>
 
-    <!-- Preferred Stack -->
-    <h3>What would your partner's ideal strong suit be?</h3>
-    <form action="#">
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${preferredStack[0]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${preferredStack[1]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${preferredStack[2]}</span>
-            </label>
-        </p>
-    </form>
+        <!-- Preferred Stack -->
+        <h3>What would your partner's ideal strong suit be?</h3>
+        <form id="otherStackQuestion" action="#">
+        </form>
 
-    <!-- Preferred Spoken Language -->
-    <h3>What language(s) would you like your partner to speak?</h3>
-    <form action="#">
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${preferredSpokenLang[0]</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${preferredSpokenLang[1]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${preferredSpokenLang[2]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${preferredSpokenLang[3]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${preferredSpokenLang[4]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${preferredSpokenLang[5]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${preferredSpokenLang[6]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${preferredSpokenLang[7]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${preferredSpokenLang[8]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${preferredSpokenLang[9]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${preferredSpokenLang[10]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${preferredSpokenLang[11]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${preferredSpokenLang[12]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${preferredSpokenLang[13]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${preferredSpokenLang[14]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${preferredSpokenLang[15]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${preferredSpokenLang[16]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${preferredSpokenLang[17]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${preferredSpokenLang[18]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" />
-                <span>${preferredSpokenLang[19]}</span>
-            </label>
-        </p>
-    </form>
+        <!-- Preferred Spoken Language -->
+        <h3>What language(s) would you like your partner to speak?</h3>
+        <form id="otherSpokenLangQuestion" action="#">
+        </form>
 
-    <!-- Preferred Remote Preference -->
-    <h3>Would you want your partner to prefer to work in person or remote?</h3>
-    <form action="#">
-        <p>
-            <label>
-                <input class="with-gap" name="group1" type="radio"  />
-                <span>${preferredRemotePref[0]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input class="with-gap" name="group1" type="radio"  />
-                <span>${preferredRemotePref[1]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input class="with-gap" name="group1" type="radio"  />
-                <span>${preferredRemotePref[2]}</span>
-            </label>
-        </p>
-    </form>
+        <!-- Preferred Remote Preference -->
+        <h3>Would you want your partner to prefer to work in person or remote?</h3>
+        <form id="otherRemotePrefQuestion" action="#">
+        </form>
 
-    <!-- User Distance Preference -->
-    <h3>What would your partner's ideal distance preference be?</h3>
-    <form action="#">
-        <p>
-            <label>
-                <input class="with-gap" name="group1" type="radio"  />
-                <span>${preferredDistancePref[0]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input class="with-gap" name="group1" type="radio"  />
-                <span>${preferredDistancePref[1]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input class="with-gap" name="group1" type="radio"  />
-                <span>${preferredDistancePref[2]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input class="with-gap" name="group1" type="radio"  />
-                <span>${preferredDistancePref[3]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input class="with-gap" name="group1" type="radio"  />
-                <span>${preferredDistancePref[4]}</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input class="with-gap" name="group1" type="radio"  />
-                <span>${preferredDistancePref[5]}</span>
-            </label>
-        </p>
-    </form>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"
-        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <!-- User Distance Preference -->
+        <h3>What would your partner's ideal distance preference be?</h3>
+        <form id="otherDistancePrefQuestion" action="#">
+        </form>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
         <!-- Compiled and minified JavaScript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="questionPseudocode.js"></script>
-</div>
+        <script src="questionPseudocode.js"></script>
+    </div>
 </body>
 
 </html>

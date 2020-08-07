@@ -13,17 +13,23 @@
 
  //  import routes
  const authRoutes = require('./middleware/auth');
-// route middlewares
+ const dashboardRoutes = require("./middleware/dashboard");
+ const verifyToken = require("./middleware/validate-token");
+
+ // route middlewares
  app.use('/api/user', authRoutes);
 
+ // this route is protected with token
+ app.use("/api/dashboard", verifyToken, dashboardRoutes);
+
  // connecting our database
-const mongoose = require('mongoose');
-mongoose.connect(process.env.MONGODB_URL, {
+ const mongoose = require('mongoose');
+ mongoose.connect(process.env.MONGODB_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-},
-() => console.log('connected to db')
-);
+ },
+ () => console.log('connected to db')
+ );
 
 
  app.listen(PORT, function() {

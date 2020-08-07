@@ -1,4 +1,5 @@
 const router = require("express").Router();
+
 router.get("/", (req, res) => {
     // token payload information
   res.json({
@@ -10,4 +11,5 @@ router.get("/", (req, res) => {
     },
   });
 });
+
 module.exports = router;

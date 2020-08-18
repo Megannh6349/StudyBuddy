@@ -24,22 +24,12 @@
 
  // connecting our database
  const mongoose = require('mongoose');
- mongoose.connect(process.env.MONGODB_URL, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
- },
- () => console.log('connected to db')
+ mongoose.connect(process.env.MONGODB_URI || "mongodb://drew:drew123@ds247178.mlab.com:47178/heroku_6drj69t0",
+ {
+   useMongoClient: true
+ }
  );
-
 
  app.listen(PORT, function() {
     console.log("==> 🌎  Listening on port %s. Visit http://localhost:" + PORT);
   });
-
-//  mongodb+srv://root:<password>@cluster0.fhygf.mongodb.net/<dbname>?retryWrites=true&w=majority
-
-// {
-//   "name": "Mario",
-//   "email": "kun.zizinho@gmail.com",
-//   "password": "password123"
-// }
